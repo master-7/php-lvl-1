@@ -51,7 +51,7 @@ foreach($MESSAGE as $href => $text) {
 <?php
 if($position) {
     ?>
-        <p><b> Выбран текст "<?php echo ucfirst($MESSAGE[$position]['MENUTEXT']) ?>"</b></p>
+        <p><b>Выбран текст "<?php echo ucfirst($MESSAGE[$position]['MENUTEXT']) ?>"</b></p>
         <br/>
 
         <p><b> Текст: "</b><?php echo $MESSAGE[$position]['MAINTEXT'] ?><b>"</b></p>
