@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>{$title}</title>
+  </head>
+  <body>
+    {if $logged == false}
+    <div>
+      <form action="?action=login" method="POST">
+        <input type="text" name="username" placeholder="Логин">
+        <input type="text" name="password" placeholder="Пароль">
+        <input type="submit">
+      </form>
+    </div>
+    {else}
+    Привет, {$username} <a href="/?action=logout">Выйти</a>
+    {/if}
+    <nav>
+      <ul>
+      {foreach from=$menu item=item}
+      {if $currentPage == $item.url}
+        <li>{$item.title}</li>
+      {else}
+        <li><a href="?page={$item.url}">{$item.title}</a></li>
+      {/if}
+      {/foreach}
+    </ul>
+    </nav>
+    {$content}
+  </body>
+</html>
