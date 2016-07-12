@@ -1,0 +1,25 @@
+<h2>Гостевая книга</h2>
+{if (isset($errors))}
+  <b>Ошибка</b>
+  <ul>
+  {foreach from=$errors item=error}
+    <li>{$error}</li>
+  {/foreach}
+  </ul>
+  <hr>
+{/if}
+<ul>
+  {foreach from=$messages item=message}
+  <li>
+    {$message.user.name}, {$message.user.email}, {$message.time}
+    <hr>
+    {$message.text}
+
+  </li>
+  {/foreach}
+</ul>
+<hr>
+<form action="" method="post">
+  <textarea name="text" placeholder="Введите сообщение"></textarea>
+  <input type="submit" name="save" value="Отправить">
+</form>
